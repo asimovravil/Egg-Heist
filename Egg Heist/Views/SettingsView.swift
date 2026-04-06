@@ -16,7 +16,6 @@ struct SettingsView: View {
     private let darkBg = Color(red: 0.063, green: 0.063, blue: 0.063)
     private let creamWhite = Color(red: 1.0, green: 0.96, blue: 0.88)
     private let privacyPolicyURL = URL(string: "https://www.freeprivacypolicy.com/live/2895277e-2c57-4cf9-bbdb-4c21949ff1e6")!
-    private let websiteURL = URL(string: "https://www.freeprivacypolicy.com/live/2895277e-2c57-4cf9-bbdb-4c21949ff1e6")!
 
     var body: some View {
         ZStack {
@@ -65,14 +64,6 @@ struct SettingsView: View {
                     ) {
                         showPrivacyPolicy = true
                         GameFeedbackService.shared.play(.tap)
-                    }
-                    actionRow(
-                        icon: "arrow.up.right.square.fill",
-                        title: "Open Website",
-                        subtitle: "Simple external URL redirect",
-                        tint: warmYellow
-                    ) {
-                        UIApplication.shared.open(websiteURL)
                     }
                     actionRow(
                         icon: "star.bubble.fill",
