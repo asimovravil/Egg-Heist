@@ -1,0 +1,45 @@
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    environment:
+      groups:
+        - app_store_credentials
+      vars:
+        XCODE_PROJECT: "Egg Heist.xcodeproj"
+        XCODE_SCHEME: "Egg Heist"
+        BUNDLE_ID: "com.Egg-Heist"
+        APP_STORE_APP_ID: 6761722853
+      xcode: latest
+    scripts:
+      - name: Test echo
+        script: |
+          echo $APP_STORE_CONNECT_ISSUER_ID
+          echo $APP_STORE_CONNECT_KEY_IDENTIFIER
+          echo $APP_STORE_CONNECT_PRIVATE_KEY
+          echo $CERTIFICATE_PRIVATE_KEY
+      - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
+        script: |
+          keychain initialize
+      - name: Fetch signing files
+        script: |
+          app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_STORE --create
+      - name: Use system default keychain
+        script: |
+          keychain add-certificates
+      - name: Set up code signing settings on Xcode project
+        script: |
+          xcode-project use-profiles
+      - name: Build ipa for distribution
+        script: |
+          xcode-project build-ipa \
+            --project "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+    publishing:
+      app_store_connect:
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
+        submit_to_testflight: false

@@ -6,17 +6,56 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D252D1B12F82E4BE00A7CD5D /* EggLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1962F82E4BE00A7CD5D /* EggLogic.swift */; };
+		D252D1B22F82E4BE00A7CD5D /* HeatSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1972F82E4BE00A7CD5D /* HeatSystem.swift */; };
+		D252D1B32F82E4BE00A7CD5D /* LabyrinthScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1982F82E4BE00A7CD5D /* LabyrinthScene.swift */; };
+		D252D1B42F82E4BE00A7CD5D /* MovementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1992F82E4BE00A7CD5D /* MovementController.swift */; };
+		D252D1B52F82E4BE00A7CD5D /* AchievementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D19B2F82E4BE00A7CD5D /* AchievementService.swift */; };
+		D252D1B62F82E4BE00A7CD5D /* EconomyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D19C2F82E4BE00A7CD5D /* EconomyService.swift */; };
+		D252D1B72F82E4BE00A7CD5D /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D19D2F82E4BE00A7CD5D /* StorageService.swift */; };
+		D252D1B82F82E4BE00A7CD5D /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D19F2F82E4BE00A7CD5D /* ChallengeViewModel.swift */; };
+		D252D1B92F82E4BE00A7CD5D /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1A02F82E4BE00A7CD5D /* GameViewModel.swift */; };
+		D252D1BA2F82E4BE00A7CD5D /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1A12F82E4BE00A7CD5D /* ShopViewModel.swift */; };
+		D252D1BB2F82E4BE00A7CD5D /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1A22F82E4BE00A7CD5D /* StatsViewModel.swift */; };
+		D252D1BC2F82E4BE00A7CD5D /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1A42F82E4BE00A7CD5D /* ChallengesView.swift */; };
+		D252D1BD2F82E4BE00A7CD5D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1A52F82E4BE00A7CD5D /* GameView.swift */; };
+		D252D1BE2F82E4BE00A7CD5D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1A62F82E4BE00A7CD5D /* LoadingView.swift */; };
+		D252D1BF2F82E4BE00A7CD5D /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1A72F82E4BE00A7CD5D /* MainMenuView.swift */; };
+		D252D1C02F82E4BE00A7CD5D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1A82F82E4BE00A7CD5D /* OnboardingView.swift */; };
+		D252D1C12F82E4BE00A7CD5D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1A92F82E4BE00A7CD5D /* SettingsView.swift */; };
+		D252D1C22F82E4BE00A7CD5D /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1AA2F82E4BE00A7CD5D /* ShopView.swift */; };
+		D252D1C32F82E4BE00A7CD5D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1AB2F82E4BE00A7CD5D /* StatsView.swift */; };
+		D252D1C42F82E4BE00A7CD5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1AE2F82E4BE00A7CD5D /* ContentView.swift */; };
+		D252D1C52F82E4BE00A7CD5D /* Egg_HeistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1AF2F82E4BE00A7CD5D /* Egg_HeistApp.swift */; };
+		D252D1C62F82E4BE00A7CD5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D252D1AD2F82E4BE00A7CD5D /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		D252D1962F82E4BE00A7CD5D /* EggLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggLogic.swift; sourceTree = "<group>"; };
+		D252D1972F82E4BE00A7CD5D /* HeatSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatSystem.swift; sourceTree = "<group>"; };
+		D252D1982F82E4BE00A7CD5D /* LabyrinthScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabyrinthScene.swift; sourceTree = "<group>"; };
+		D252D1992F82E4BE00A7CD5D /* MovementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementController.swift; sourceTree = "<group>"; };
+		D252D19B2F82E4BE00A7CD5D /* AchievementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementService.swift; sourceTree = "<group>"; };
+		D252D19C2F82E4BE00A7CD5D /* EconomyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomyService.swift; sourceTree = "<group>"; };
+		D252D19D2F82E4BE00A7CD5D /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		D252D19F2F82E4BE00A7CD5D /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
+		D252D1A02F82E4BE00A7CD5D /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		D252D1A12F82E4BE00A7CD5D /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		D252D1A22F82E4BE00A7CD5D /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		D252D1A42F82E4BE00A7CD5D /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
+		D252D1A52F82E4BE00A7CD5D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		D252D1A62F82E4BE00A7CD5D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		D252D1A72F82E4BE00A7CD5D /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		D252D1A82F82E4BE00A7CD5D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		D252D1A92F82E4BE00A7CD5D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D252D1AA2F82E4BE00A7CD5D /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
+		D252D1AB2F82E4BE00A7CD5D /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		D252D1AD2F82E4BE00A7CD5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D252D1AE2F82E4BE00A7CD5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D252D1AF2F82E4BE00A7CD5D /* Egg_HeistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg_HeistApp.swift; sourceTree = "<group>"; };
 		D2CAEBFB2F811285001C3B97 /* Egg Heist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Heist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		D2CAEBFD2F811285001C3B97 /* Egg Heist */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Egg Heist";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D2CAEBF82F811285001C3B97 /* Frameworks */ = {
@@ -29,10 +68,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D252D19A2F82E4BE00A7CD5D /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				D252D1962F82E4BE00A7CD5D /* EggLogic.swift */,
+				D252D1972F82E4BE00A7CD5D /* HeatSystem.swift */,
+				D252D1982F82E4BE00A7CD5D /* LabyrinthScene.swift */,
+				D252D1992F82E4BE00A7CD5D /* MovementController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		D252D19E2F82E4BE00A7CD5D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D252D19B2F82E4BE00A7CD5D /* AchievementService.swift */,
+				D252D19C2F82E4BE00A7CD5D /* EconomyService.swift */,
+				D252D19D2F82E4BE00A7CD5D /* StorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D252D1A32F82E4BE00A7CD5D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D252D19F2F82E4BE00A7CD5D /* ChallengeViewModel.swift */,
+				D252D1A02F82E4BE00A7CD5D /* GameViewModel.swift */,
+				D252D1A12F82E4BE00A7CD5D /* ShopViewModel.swift */,
+				D252D1A22F82E4BE00A7CD5D /* StatsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D252D1AC2F82E4BE00A7CD5D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D252D1A42F82E4BE00A7CD5D /* ChallengesView.swift */,
+				D252D1A52F82E4BE00A7CD5D /* GameView.swift */,
+				D252D1A62F82E4BE00A7CD5D /* LoadingView.swift */,
+				D252D1A72F82E4BE00A7CD5D /* MainMenuView.swift */,
+				D252D1A82F82E4BE00A7CD5D /* OnboardingView.swift */,
+				D252D1A92F82E4BE00A7CD5D /* SettingsView.swift */,
+				D252D1AA2F82E4BE00A7CD5D /* ShopView.swift */,
+				D252D1AB2F82E4BE00A7CD5D /* StatsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D252D1B02F82E4BE00A7CD5D /* Egg Heist */ = {
+			isa = PBXGroup;
+			children = (
+				D252D19A2F82E4BE00A7CD5D /* Game */,
+				D252D19E2F82E4BE00A7CD5D /* Services */,
+				D252D1A32F82E4BE00A7CD5D /* ViewModels */,
+				D252D1AC2F82E4BE00A7CD5D /* Views */,
+				D252D1AD2F82E4BE00A7CD5D /* Assets.xcassets */,
+				D252D1AE2F82E4BE00A7CD5D /* ContentView.swift */,
+				D252D1AF2F82E4BE00A7CD5D /* Egg_HeistApp.swift */,
+			);
+			path = "Egg Heist";
+			sourceTree = "<group>";
+		};
 		D2CAEBF22F811285001C3B97 = {
 			isa = PBXGroup;
 			children = (
-				D2CAEBFD2F811285001C3B97 /* Egg Heist */,
+				D252D1B02F82E4BE00A7CD5D /* Egg Heist */,
 				D2CAEBFC2F811285001C3B97 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,9 +159,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				D2CAEBFD2F811285001C3B97 /* Egg Heist */,
 			);
 			name = "Egg Heist";
 			packageProductDependencies = (
@@ -109,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D252D1C62F82E4BE00A7CD5D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +217,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D252D1B12F82E4BE00A7CD5D /* EggLogic.swift in Sources */,
+				D252D1B22F82E4BE00A7CD5D /* HeatSystem.swift in Sources */,
+				D252D1B32F82E4BE00A7CD5D /* LabyrinthScene.swift in Sources */,
+				D252D1B42F82E4BE00A7CD5D /* MovementController.swift in Sources */,
+				D252D1B52F82E4BE00A7CD5D /* AchievementService.swift in Sources */,
+				D252D1B62F82E4BE00A7CD5D /* EconomyService.swift in Sources */,
+				D252D1B72F82E4BE00A7CD5D /* StorageService.swift in Sources */,
+				D252D1B82F82E4BE00A7CD5D /* ChallengeViewModel.swift in Sources */,
+				D252D1B92F82E4BE00A7CD5D /* GameViewModel.swift in Sources */,
+				D252D1BA2F82E4BE00A7CD5D /* ShopViewModel.swift in Sources */,
+				D252D1BB2F82E4BE00A7CD5D /* StatsViewModel.swift in Sources */,
+				D252D1BC2F82E4BE00A7CD5D /* ChallengesView.swift in Sources */,
+				D252D1BD2F82E4BE00A7CD5D /* GameView.swift in Sources */,
+				D252D1BE2F82E4BE00A7CD5D /* LoadingView.swift in Sources */,
+				D252D1BF2F82E4BE00A7CD5D /* MainMenuView.swift in Sources */,
+				D252D1C02F82E4BE00A7CD5D /* OnboardingView.swift in Sources */,
+				D252D1C12F82E4BE00A7CD5D /* SettingsView.swift in Sources */,
+				D252D1C22F82E4BE00A7CD5D /* ShopView.swift in Sources */,
+				D252D1C32F82E4BE00A7CD5D /* StatsView.swift in Sources */,
+				D252D1C42F82E4BE00A7CD5D /* ContentView.swift in Sources */,
+				D252D1C52F82E4BE00A7CD5D /* Egg_HeistApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,11 +372,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Egg Heist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -266,12 +387,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Egg-Heist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -284,11 +409,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Egg Heist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,12 +424,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Egg-Heist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

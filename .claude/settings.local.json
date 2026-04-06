@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcodebuild -project \"Egg Heist.xcodeproj\" -scheme \"Egg Heist\" -destination \"generic/platform=iOS Simulator\" -configuration Debug build)",
+      "Bash(xcodebuild -project \"Egg Heist.xcodeproj\" -scheme \"Egg Heist\" -destination \"generic/platform=iOS\" -configuration Debug build CODE_SIGNING_ALLOWED=NO)"
+    ]
+  }
+}

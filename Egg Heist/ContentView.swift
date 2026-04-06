@@ -1,24 +1,34 @@
-//
-//  ContentView.swift
-//  Egg Heist
-//
-//  Created by Ravil on 04.04.2026.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+    @State private var appState: AppState = .loading
 
-#Preview {
-    ContentView()
+    enum AppState {
+        case loading
+        case onboarding
+        case menu
+    }
+
+    var body: some View {
+        switch appState {
+        case .loading:
+            LoadingView {
+                withAnimation {
+                    if StorageService.shared.hasSeenOnboarding {
+                        appState = .menu
+                    } else {
+                        appState = .onboarding
+                    }
+                }
+            }
+        case .onboarding:
+            OnboardingView {
+                withAnimation {
+                    appState = .menu
+                }
+            }
+        case .menu:
+            MainMenuView()
+        }
+    }
 }
