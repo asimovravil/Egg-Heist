@@ -15,8 +15,8 @@ struct SettingsView: View {
     private let deepRed = Color(red: 0.9, green: 0.0, blue: 0.15)
     private let darkBg = Color(red: 0.063, green: 0.063, blue: 0.063)
     private let creamWhite = Color(red: 1.0, green: 0.96, blue: 0.88)
-    private let privacyPolicyURL = URL(string: "https://example.com/privacy")!
-    private let websiteURL = URL(string: "https://example.com")!
+    private let privacyPolicyURL = URL(string: "https://www.freeprivacypolicy.com/live/2895277e-2c57-4cf9-bbdb-4c21949ff1e6")!
+    private let websiteURL = URL(string: "https://www.freeprivacypolicy.com/live/2895277e-2c57-4cf9-bbdb-4c21949ff1e6")!
 
     var body: some View {
         ZStack {
