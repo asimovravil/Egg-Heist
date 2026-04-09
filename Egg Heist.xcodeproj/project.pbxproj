@@ -29,6 +29,12 @@
 		D252D1C42F82E4BE00A7CD5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1AE2F82E4BE00A7CD5D /* ContentView.swift */; };
 		D252D1C52F82E4BE00A7CD5D /* Egg_HeistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D1AF2F82E4BE00A7CD5D /* Egg_HeistApp.swift */; };
 		D252D1C62F82E4BE00A7CD5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D252D1AD2F82E4BE00A7CD5D /* Assets.xcassets */; };
+		D252D2152F88167D00A7CD5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D2102F88167D00A7CD5D /* AppDelegate.swift */; };
+		D252D2162F88167D00A7CD5D /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D2132F88167D00A7CD5D /* WebVC.swift */; };
+		D252D2172F88167D00A7CD5D /* Сonstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D20F2F88167D00A7CD5D /* Сonstants.swift */; };
+		D252D2182F88167D00A7CD5D /* CheckURLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D2112F88167D00A7CD5D /* CheckURLService.swift */; };
+		D252D2192F88167D00A7CD5D /* LoadingSplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D2122F88167D00A7CD5D /* LoadingSplash.swift */; };
+		D252D21B2F88168100A7CD5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D252D21A2F88168100A7CD5D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +60,12 @@
 		D252D1AD2F82E4BE00A7CD5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D252D1AE2F82E4BE00A7CD5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D252D1AF2F82E4BE00A7CD5D /* Egg_HeistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg_HeistApp.swift; sourceTree = "<group>"; };
+		D252D20F2F88167D00A7CD5D /* Сonstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Сonstants.swift"; sourceTree = "<group>"; };
+		D252D2102F88167D00A7CD5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D252D2112F88167D00A7CD5D /* CheckURLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckURLService.swift; sourceTree = "<group>"; };
+		D252D2122F88167D00A7CD5D /* LoadingSplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplash.swift; sourceTree = "<group>"; };
+		D252D2132F88167D00A7CD5D /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
+		D252D21A2F88168100A7CD5D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2CAEBFB2F811285001C3B97 /* Egg Heist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Heist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +130,8 @@
 		D252D1B02F82E4BE00A7CD5D /* Egg Heist */ = {
 			isa = PBXGroup;
 			children = (
+				D252D21A2F88168100A7CD5D /* LaunchScreen.storyboard */,
+				D252D2142F88167D00A7CD5D /* AppMetrica */,
 				D252D19A2F82E4BE00A7CD5D /* Game */,
 				D252D19E2F82E4BE00A7CD5D /* Services */,
 				D252D1A32F82E4BE00A7CD5D /* ViewModels */,
@@ -127,6 +141,18 @@
 				D252D1AF2F82E4BE00A7CD5D /* Egg_HeistApp.swift */,
 			);
 			path = "Egg Heist";
+			sourceTree = "<group>";
+		};
+		D252D2142F88167D00A7CD5D /* AppMetrica */ = {
+			isa = PBXGroup;
+			children = (
+				D252D20F2F88167D00A7CD5D /* Сonstants.swift */,
+				D252D2102F88167D00A7CD5D /* AppDelegate.swift */,
+				D252D2112F88167D00A7CD5D /* CheckURLService.swift */,
+				D252D2122F88167D00A7CD5D /* LoadingSplash.swift */,
+				D252D2132F88167D00A7CD5D /* WebVC.swift */,
+			);
+			path = AppMetrica;
 			sourceTree = "<group>";
 		};
 		D2CAEBF22F811285001C3B97 = {
@@ -207,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D252D1C62F82E4BE00A7CD5D /* Assets.xcassets in Resources */,
+				D252D21B2F88168100A7CD5D /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +265,11 @@
 				D252D1C32F82E4BE00A7CD5D /* StatsView.swift in Sources */,
 				D252D1C42F82E4BE00A7CD5D /* ContentView.swift in Sources */,
 				D252D1C52F82E4BE00A7CD5D /* Egg_HeistApp.swift in Sources */,
+				D252D2152F88167D00A7CD5D /* AppDelegate.swift in Sources */,
+				D252D2162F88167D00A7CD5D /* WebVC.swift in Sources */,
+				D252D2172F88167D00A7CD5D /* Сonstants.swift in Sources */,
+				D252D2182F88167D00A7CD5D /* CheckURLService.swift in Sources */,
+				D252D2192F88167D00A7CD5D /* LoadingSplash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,9 +405,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Egg Heist";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -383,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Egg-Heist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -410,9 +442,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Egg Heist";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -420,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Egg-Heist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;

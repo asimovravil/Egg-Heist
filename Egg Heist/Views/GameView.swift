@@ -25,7 +25,8 @@ struct GameView: View {
             GameBackgroundView().ignoresSafeArea()
 
             VStack(spacing: 0) {
-                HStack {
+                VStack(spacing: 6) {
+                    HStack {
                     Button {
                         dismiss()
                     } label: {
@@ -72,7 +73,24 @@ struct GameView: View {
                         }
                         .font(.system(size: 13, weight: .semibold))
                     }
+                    }
+
+                    if viewModel.deliveryStreak > 1 {
+                        HStack(spacing: 6) {
+                            Image(systemName: "flame.fill")
+                                .foregroundColor(hotOrange)
+                            Text("STREAK ×\(viewModel.deliveryStreak)")
+                                .font(.system(size: 13, weight: .black, design: .rounded))
+                                .foregroundColor(creamWhite)
+                        }
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 5)
+                        .background(Color.black.opacity(0.4))
+                        .clipShape(Capsule())
+                        .transition(.scale.combined(with: .opacity))
+                    }
                 }
+                .animation(.spring(response: 0.35, dampingFraction: 0.82), value: viewModel.deliveryStreak)
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
                 .padding(.bottom, 4)

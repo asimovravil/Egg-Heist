@@ -1,6 +1,6 @@
 import SwiftUI
 
-@main
+//@main
 struct Egg_HeistApp: App {
     var body: some Scene {
         WindowGroup {

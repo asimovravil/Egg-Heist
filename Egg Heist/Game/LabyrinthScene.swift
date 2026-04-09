@@ -6,6 +6,7 @@ protocol LabyrinthSceneDelegate: AnyObject {
     func eggsRemainingDidChange(_ count: Int)
     func timerDidChange(_ time: TimeInterval)
     func iceBurstCountDidChange(_ count: Int)
+    func deliveryStreakDidChange(_ streak: Int)
 }
 
 final class LabyrinthScene: SKScene {
@@ -42,6 +43,7 @@ final class LabyrinthScene: SKScene {
     private var eggNodes: [SKShapeNode] = []
     private var safeZoneNode: SKShapeNode!
     private var lastUpdateTime: TimeInterval = 0
+    private var deliveryStreak: Int = 0
 
     override func didMove(to view: SKView) {
         backgroundColor = SKColor(red: 0.063, green: 0.063, blue: 0.063, alpha: 1)
@@ -67,6 +69,7 @@ final class LabyrinthScene: SKScene {
 
         emitEggsRemaining()
         gameDelegate?.iceBurstCountDidChange(storage.iceBurstCount)
+        gameDelegate?.deliveryStreakDidChange(0)
 
         let swipeDirections: [UISwipeGestureRecognizer.Direction] = [.up, .down, .left, .right]
         for dir in swipeDirections {
@@ -393,10 +396,17 @@ final class LabyrinthScene: SKScene {
         let egg = eggs[idx]
         let noDamage = gameContext.noDamage
         let timeBonus = egg.timeRemaining > egg.timeRemaining * 0.5
+        deliveryStreak += 1
+        let streakBonus = deliveryStreak >= 2 ? min(deliveryStreak - 1, 4) : 0
+
         let reward = EconomyService.shared.rewardForEggRescue(type: egg.type, timeBonus: timeBonus, noDamage: noDamage)
 
         EconomyService.shared.addCoins(reward)
         totalCoinsEarned += reward
+        if streakBonus > 0 {
+            EconomyService.shared.addCoins(streakBonus)
+            totalCoinsEarned += streakBonus
+        }
         totalEggsRescued += 1
         StorageService.shared.eggsRescued += 1
 
@@ -437,6 +447,24 @@ final class LabyrinthScene: SKScene {
             SKAction.removeFromParent()
         ]))
 
+        if streakBonus > 0 {
+            let streakLabel = SKLabelNode(text: "STREAK ×\(deliveryStreak)  +\(streakBonus)")
+            streakLabel.fontSize = 15
+            streakLabel.fontName = "Helvetica-Bold"
+            streakLabel.fontColor = SKColor(red: 1.0, green: 0.48, blue: 0.0, alpha: 1)
+            streakLabel.position = CGPoint(x: positionFor(row: safeZone.row, col: safeZone.col).x, y: positionFor(row: safeZone.row, col: safeZone.col).y - tileSize * 0.35)
+            streakLabel.zPosition = 30
+            addChild(streakLabel)
+            streakLabel.run(SKAction.sequence([
+                SKAction.group([
+                    SKAction.moveBy(x: 0, y: 28, duration: 0.55),
+                    SKAction.fadeOut(withDuration: 0.55)
+                ]),
+                SKAction.removeFromParent()
+            ]))
+        }
+
+        gameDelegate?.deliveryStreakDidChange(deliveryStreak)
         gameDelegate?.coinsDidChange(StorageService.shared.coins)
         GameFeedbackService.shared.play(.delivery)
         GameFeedbackService.shared.notify(.success)
@@ -541,6 +569,7 @@ final class LabyrinthScene: SKScene {
                     playerHasEgg = false
                     carriedEggIndex = nil
                     gameContext.noDamage = false
+                    resetDeliveryStreak()
 
                     let crack = SKLabelNode(text: "X")
                     crack.fontSize = tileSize * 0.5
@@ -602,6 +631,12 @@ final class LabyrinthScene: SKScene {
 
     private func emitEggsRemaining() {
         gameDelegate?.eggsRemainingDidChange(eggs.filter { !$0.isDead && !$0.isPickedUp }.count)
+    }
+
+    private func resetDeliveryStreak() {
+        guard deliveryStreak != 0 else { return }
+        deliveryStreak = 0
+        gameDelegate?.deliveryStreakDidChange(0)
     }
 
     private func levelComplete() {

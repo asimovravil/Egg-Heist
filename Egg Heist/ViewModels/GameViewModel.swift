@@ -13,6 +13,7 @@ final class GameViewModel: ObservableObject {
     @Published var coinsEarned: Int = 0
     @Published var showNextLevel: Bool = false
     @Published var isPaused: Bool = false
+    @Published var deliveryStreak: Int = 0
 
     private(set) var scene: LabyrinthScene?
     
@@ -46,6 +47,7 @@ final class GameViewModel: ObservableObject {
         coinsEarned = 0
         elapsedTime = 0
         eggsRemaining = 0
+        deliveryStreak = 0
     }
 
     var formattedTime: String {
@@ -85,6 +87,12 @@ extension GameViewModel: LabyrinthSceneDelegate {
     func iceBurstCountDidChange(_ count: Int) {
         DispatchQueue.main.async {
             self.iceBurstCount = count
+        }
+    }
+
+    func deliveryStreakDidChange(_ streak: Int) {
+        DispatchQueue.main.async {
+            self.deliveryStreak = streak
         }
     }
 }
