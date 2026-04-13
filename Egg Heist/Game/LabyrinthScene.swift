@@ -42,6 +42,7 @@ final class LabyrinthScene: SKScene {
     private var playerNode: SKShapeNode!
     private var eggNodes: [SKShapeNode] = []
     private var safeZoneNode: SKShapeNode!
+    private var guidanceArrowNode: SKShapeNode?
     private var lastUpdateTime: TimeInterval = 0
     private var deliveryStreak: Int = 0
 
@@ -362,6 +363,9 @@ final class LabyrinthScene: SKScene {
     private func updatePlayerPosition() {
         let pos = positionFor(row: movementController.playerRow, col: movementController.playerCol)
         playerNode.run(SKAction.move(to: pos, duration: 0.1))
+        if playerHasEgg {
+            updateGuidanceArrowPosition()
+        }
 
         if playerHasEgg, let idx = carriedEggIndex, idx < eggs.count {
             eggs[idx].row = movementController.playerRow
@@ -382,6 +386,8 @@ final class LabyrinthScene: SKScene {
                 }
                 GameFeedbackService.shared.play(.pickup)
                 GameFeedbackService.shared.impact(.light)
+                showGuidanceArrow()
+                updateGuidanceArrowPosition()
                 emitEggsRemaining()
                 break
             }
@@ -431,6 +437,7 @@ final class LabyrinthScene: SKScene {
 
         playerHasEgg = false
         carriedEggIndex = nil
+        hideGuidanceArrow()
 
         let effect = SKLabelNode(text: "+\(reward)")
         effect.fontSize = 20
@@ -568,6 +575,7 @@ final class LabyrinthScene: SKScene {
                     eggs[idx].isDead = true
                     playerHasEgg = false
                     carriedEggIndex = nil
+                    hideGuidanceArrow()
                     gameContext.noDamage = false
                     resetDeliveryStreak()
 
@@ -639,8 +647,67 @@ final class LabyrinthScene: SKScene {
         gameDelegate?.deliveryStreakDidChange(0)
     }
 
+    private func showGuidanceArrow() {
+        if guidanceArrowNode == nil {
+            let path = CGMutablePath()
+            path.move(to: CGPoint(x: 0, y: tileSize * 0.35))
+            path.addLine(to: CGPoint(x: tileSize * 0.18, y: -tileSize * 0.05))
+            path.addLine(to: CGPoint(x: tileSize * 0.07, y: -tileSize * 0.05))
+            path.addLine(to: CGPoint(x: tileSize * 0.07, y: -tileSize * 0.3))
+            path.addLine(to: CGPoint(x: -tileSize * 0.07, y: -tileSize * 0.3))
+            path.addLine(to: CGPoint(x: -tileSize * 0.07, y: -tileSize * 0.05))
+            path.addLine(to: CGPoint(x: -tileSize * 0.18, y: -tileSize * 0.05))
+            path.closeSubpath()
+
+            let arrow = SKShapeNode(path: path)
+            arrow.fillColor = SKColor(red: 0.96, green: 0.77, blue: 0.26, alpha: 0.95)
+            arrow.strokeColor = SKColor(red: 1.0, green: 0.93, blue: 0.7, alpha: 0.95)
+            arrow.lineWidth = 1.5
+            arrow.zPosition = 40
+            arrow.alpha = 0
+            addChild(arrow)
+            guidanceArrowNode = arrow
+        }
+
+        guidanceArrowNode?.removeAllActions()
+        guidanceArrowNode?.setScale(1)
+        guidanceArrowNode?.run(SKAction.fadeIn(withDuration: 0.12))
+        guidanceArrowNode?.run(
+            SKAction.repeatForever(
+                SKAction.sequence([
+                    SKAction.scale(to: 1.06, duration: 0.3),
+                    SKAction.scale(to: 0.96, duration: 0.3)
+                ])
+            ),
+            withKey: "guidancePulse"
+        )
+    }
+
+    private func hideGuidanceArrow() {
+        guard let arrow = guidanceArrowNode else { return }
+        arrow.removeAllActions()
+        arrow.run(SKAction.sequence([
+            SKAction.fadeOut(withDuration: 0.1),
+            SKAction.removeFromParent()
+        ]))
+        guidanceArrowNode = nil
+    }
+
+    private func updateGuidanceArrowPosition() {
+        guard let arrow = guidanceArrowNode else { return }
+        let playerPos = positionFor(row: movementController.playerRow, col: movementController.playerCol)
+        let targetPos = positionFor(row: safeZone.row, col: safeZone.col)
+        let dx = targetPos.x - playerPos.x
+        let dy = targetPos.y - playerPos.y
+        let angle = atan2(dy, dx) - (.pi / 2)
+
+        arrow.position = CGPoint(x: playerPos.x, y: playerPos.y + tileSize * 0.68)
+        arrow.zRotation = angle
+    }
+
     private func levelComplete() {
         gameOver = true
+        hideGuidanceArrow()
         gameContext.levelCompleted = true
         GameFeedbackService.shared.play(.levelComplete)
         GameFeedbackService.shared.notify(.success)
@@ -658,6 +725,7 @@ final class LabyrinthScene: SKScene {
 
     private func endGame() {
         gameOver = true
+        hideGuidanceArrow()
         gameContext.levelCompleted = false
         GameFeedbackService.shared.play(.gameOver)
         GameFeedbackService.shared.notify(.error)
